@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Blog,Author,Entry,Restaurant,Rating
+from .models import Blog,Author,Entry,Restaurant,Rating,Sale
 
 @admin.register(Blog)
 class BlogModelAdmin(admin.ModelAdmin):
@@ -32,3 +32,8 @@ class RestaurantModelAdmin(admin.ModelAdmin):
 @admin.register(Rating)
 class RatingModelAdmin(admin.ModelAdmin):
     list_display=['user','restaurant','rating']
+    
+@admin.register(Sale)
+class SaleModelAdmin(admin.ModelAdmin):
+    list_display=['restaurant','income','datetime']
+    
