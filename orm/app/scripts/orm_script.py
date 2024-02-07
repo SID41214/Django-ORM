@@ -5,12 +5,13 @@ from django.db import connection
 from pprint import pprint
 
 def run():
-    s=Sale()
-    res=Restaurant.objects.first()
-    s.restaurant=res
-    s.income=12
-    s.datetime=timezone.now()
-    s.save()
+    
+    # s=Sale()
+    # res=Restaurant.objects.first()
+    # s.restaurant=res
+    # s.income=12
+    # s.datetime=timezone.now()
+    # s.save()
     #user=User.objects.first()
     #res=Restaurant.objects.first()
     #rating=Rating.objects.create(user=user, restaurant=res,rating=5)
