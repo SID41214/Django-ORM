@@ -51,8 +51,12 @@ class Restaurant(models.Model):
     name =models.CharField(max_length=100)
     website =models.URLField(default='')
     date_opened = models.DateTimeField()
-    latitude =models.FloatField()
-    longitude =models.FloatField()
+    latitude =models.FloatField(
+        validators=[MinValueValidator(-90),MaxValueValidator(90)]
+    )
+    longitude =models.FloatField(
+                validators=[MinValueValidator(-180),MaxValueValidator(180)]
+    )
     restaurant=models.CharField(max_length=2,choices=TypeChoices.choices)
     
     def __str__(self):

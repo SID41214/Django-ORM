@@ -5,8 +5,18 @@ Home
 
 {% block main %}
 
-<h1 style="text-align:center;color: red;">Home Page </h1>
-<hr>
+<div style="text-align: center;">
+    <h1 style="color: red;">Home Page</h1>
+    <hr>
     
+    <div style="display: inline-block; text-align: left;">
+        <form action="" method="post">
+            {% csrf_token %}
+
+            {{ form.as_table}}
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
 {% endblock main %}
-    
