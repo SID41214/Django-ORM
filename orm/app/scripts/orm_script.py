@@ -5,10 +5,23 @@ from django.db import connection
 from pprint import pprint
 
 def run():
-    res = Restaurant.objects.first()
-    print(res.name)
-    res.name = 'New restaurant italian restaurant'
-    res.save()
+    
+    print(connection.queries)
+    #res=Restaurant.objects.first()
+    # print(res.pk)
+    # print(res.ratings.all())    
+    #print(res.delete())
+#     res=Restaurant.objects.filter(name__startswith='M')
+#     print(res)
+#     print(res.update(
+#         date_opened=timezone.now() -timezone.timedelta(days=365),
+#         website='http://test.com'
+#     )
+# )
+    
+    
+    
+    
     
     # user = User.objects.first()
     # res = Restaurant.objects.first()   # pylint: disable=no-member
