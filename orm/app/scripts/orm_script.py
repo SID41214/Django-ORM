@@ -5,8 +5,13 @@ from django.db import connection
 from pprint import pprint
 
 def run():
+    #user=User.objects.first()
+    #res=Restaurant.objects.first()
+    #rating=Rating.objects.create(user=user, restaurant=res,rating=5)
+    #rating.full_clean()
+    #rating.save()
     
-    print(connection.queries)
+    
     #res=Restaurant.objects.first()
     # print(res.pk)
     # print(res.ratings.all())    
