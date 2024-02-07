@@ -2,7 +2,7 @@
 
 # Create your models here.
 from datetime import date
-
+from django.core.validators import MinValueValidator,MaxValueValidator
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -61,7 +61,9 @@ class Restaurant(models.Model):
 class Rating(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     restaurant=models.ForeignKey(Restaurant,on_delete=models.CASCADE,related_name='ratings')
-    rating =models.PositiveSmallIntegerField()
+    rating =models.PositiveSmallIntegerField(
+        validators=[MinValueValidator(1),MaxValueValidator(5)]
+    )
     
     def __str__(self):
         return f"Rating : {self.rating}"
