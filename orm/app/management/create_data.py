@@ -34,15 +34,15 @@ class Command(BaseCommand):
             {'name': 'Italian 1', 'date_opened': timezone.now() - timezone.timedelta(days=37), 'restaurant_type': Restaurant.TypeChoices.ITALIAN, 'latitude': 41.902782, 'longitude':  12.496366},
         ]
 
-        Restaurant.objects.all().delete()
+        Restaurant.objects.all().delete()    # pylint: disable=no-member
         for r in restaurants:
-            Restaurant.objects.create(**r)
+            Restaurant.objects.create(**r)    # pylint: disable=no-member
 
-        restaurants = Restaurant.objects.all()
+        restaurants = Restaurant.objects.all()       # pylint: disable=no-member
 
         # create some ratings
         for _ in range(30):
-            Rating.objects.create(
+            Rating.objects.create(                    # pylint: disable=no-member
                 restaurant=random.choice(restaurants),
                 user=user,
                 rating=random.randint(1,5)
@@ -50,7 +50,7 @@ class Command(BaseCommand):
 
         # create some sales
         for _ in range(100):
-            Sale.objects.create(
+            Sale.objects.create(                     # pylint: disable=no-member
                 restaurant=random.choice(restaurants),
                 income=random.uniform(5, 100),
                 datetime=timezone.now() - timezone.timedelta(days=random.randint(1,50))
