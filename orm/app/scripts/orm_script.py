@@ -6,7 +6,7 @@ from pprint import pprint
 
 def run():
     
-    # s=Sale()
+    s=Sale()
     # res=Restaurant.objects.first()
     # s.restaurant=res
     # s.income=12
