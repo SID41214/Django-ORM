@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from app.models import Restaurant,Rating,Sale
+from app.models import Restaurant,Rating,Sale,Staff
 from django.utils import timezone
 from django.db import connection
 from pprint import pprint

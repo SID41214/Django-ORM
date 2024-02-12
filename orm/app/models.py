@@ -37,7 +37,9 @@ class Entry(models.Model):
     def __str__(self):
         return self.headline
     
-    
+
+
+   
 class Restaurant(models.Model):
     class TypeChoices(models.TextChoices):
         INDIAN ='IN','Indian'
@@ -61,6 +63,13 @@ class Restaurant(models.Model):
     
     def __str__(self):
         return self.name
+    
+class Staff(models.Model):
+    name = models.CharField(max_length=128)
+    restaurants  =models.ManyToManyField(Restaurant)
+    
+    
+    
     
 class Rating(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
