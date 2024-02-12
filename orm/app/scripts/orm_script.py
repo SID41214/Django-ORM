@@ -5,10 +5,20 @@ from django.db import connection
 from pprint import pprint
 
 def run():
+    pass
+    # staff, created = Staff.objects.get_or_create(name='John Wick')
+    # staff.restaurants.set(Restaurant.objects.all()[:5])
+    # print(staff.restaurants.count())
     
-    print(Restaurant.objects.count())
-    print(Rating.objects.count())
-    print(Sale.objects.count())
+    # print(staff.name)
+    # print(staff.restaurants.add(Restaurant.objects.first())) # pylint: disable=no-member
+    # print(staff.restaurants.all())
+    # print(staff.restaurants.count())
+
+
+    #print(staff)
+    #print(type(staff.restaurants))
+    
     # res=Restaurant.objects.first()
     # s.restaurant=res
     # s.income=12
