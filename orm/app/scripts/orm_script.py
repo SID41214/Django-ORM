@@ -5,7 +5,8 @@ from django.db import connection
 from pprint import pprint
 
 def run():
-    pass
+    res = Restaurant.objects.get(pk=6)
+    print(res.staff_set.all())
     # staff, created = Staff.objects.get_or_create(name='John Wick')
     # staff.restaurants.set(Restaurant.objects.all()[:5])
     # print(staff.restaurants.count())
