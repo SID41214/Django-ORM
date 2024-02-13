@@ -1,12 +1,22 @@
 from django.contrib.auth.models import User
-from app.models import Restaurant,Rating,Sale,Staff
+from app.models import Restaurant,Rating,Sale,Staff,StaffRestaurant
 from django.utils import timezone
 from django.db import connection
 from pprint import pprint
 
 def run():
-    res = Restaurant.objects.get(pk=6)
-    print(res.staff_set.all())
+    pass
+    
+    # staff, created = Staff.objects.get_or_create(name='John Wick')
+    # res = Restaurant.objects.first()
+    
+    # StaffRestaurant.objects.create(
+    #     staff=staff,restaurant= res,salary=20000
+    # )
+    
+  
+    # res = Restaurant.objects.get(pk=6)
+    # print(res.staff_set.all())
     # staff, created = Staff.objects.get_or_create(name='John Wick')
     # staff.restaurants.set(Restaurant.objects.all()[:5])
     # print(staff.restaurants.count())
