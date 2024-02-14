@@ -5,7 +5,7 @@ from django.db import connection
 from pprint import pprint
 
 def run():
-    
+    pass
     
     # staff, created = Staff.objects.get_or_create(name='John Wick')
     # res = Restaurant.objects.first()
