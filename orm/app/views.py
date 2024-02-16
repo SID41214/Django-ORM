@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import RatingForm,ProductOrderForm
 from app.models import Restaurant,Sale,Rating
+from django.db import transaction
 # Create your views here.
 def home(request):
     
@@ -23,9 +24,14 @@ def order_product(request):
     if request.method == 'POST':
         form = ProductOrderForm(request.POST)
         if form.is_valid():
-            order = form.save()
-            order.product.number_in_stock -= order.number_of_items
-            order.product.save()
+            with transaction.atomic():
+                order = form.save() 
+            
+                #server crash 
+                import sys
+                sys.exit(1)
+                order.product.number_in_stock -= order.number_of_items
+                order.product.save()
             return redirect('order-product')
         else:
             context={'form':form}
@@ -35,3 +41,7 @@ def order_product(request):
         'form':form,
     }
     return render(request,'order.html',context)
+            
+            
+            
+            
