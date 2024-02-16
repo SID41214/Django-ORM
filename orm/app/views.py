@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import RatingForm
+from .forms import RatingForm,ProductOrderForm
 from app.models import Restaurant,Sale,Rating
 # Create your views here.
 def home(request):
@@ -16,3 +16,9 @@ def home(request):
     #         return render(request,'home.html',{'form':form})
     # context ={'form':RatingForm()}
     return render(request,'home.html',context)
+def order_product(request):
+    form =ProductOrderForm()
+    context= {
+        'form':form,
+    }
+    return render(request,'order.html',context)
