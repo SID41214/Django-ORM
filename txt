@@ -1,0 +1,85 @@
+from app.models import Author,Book
+
+class Book(models.Model):
+	title=models.CharFeild(max_length=50,blank=True)
+	price=
+	pages=
+
+
+##fetch all data from table
+
+book_data =Book.objects.all()
+for b in book_data:
+	print(b.title)
+
+
+##fetch specific column
+
+Person.objects.only('name','age')
+
+
+##fetch distinct rows
+
+Person.objects.values('name','age').distinct()
+
+#fetch some specific number of rows
+
+Person.objects.all()[:10]
+
+#limit and offset keywords
+
+Person.objects.all()[5:10]
+
+
+#filter 
+
+per.objects.filter(id=2)
+
+p.objects.filter(age__gt=18)
+p.objects.filter(age__gte=18)
+p.objects.filter(age__lt =18)
+p.objects.filter(age__lte=18)
+p.objects.exclude(age=18)
+
+p.objects.filter(age__range(10,20))
+
+p.objects.filter(name__icontains='A')
+p.objects.filter(name__contains='A')
+p.objects.filter(name__istartswith='A')
+p.objects.filter(name__startswith='A')
+p.objects.filter(name__endswith='A')
+
+
+p.objects.filter(id__in=[1,2])
+
+p.objects.filter(gender='male',age__gt=25)
+
+p.objects.filter(Q(gender='male')|Q(age__gt=25))
+
+p.objects.exclude(gender='male')
+
+p.objects.filter(age__isnull=true)
+p.objects.filter(age=None)
+
+
+person.objects.order_by('-age')
+
+
+person.objects.create(name='',age='',gender='male')
+
+a=person.objects.get(id=1)
+a.age=23
+a.save()
+
+p.objects.update(age=F(age)*1.5)
+
+p.objects.all().delete()
+
+person.objects.filter(age__lt=10).delete()
+
+
+p.objects.all().aggregate(Min(age))
+
+p.objects.values('gender').annotate(count=Count('gender'))
+
+p.objects.annotate(count=Count('gender')).values('gender','count').filter(count__gt=1)
