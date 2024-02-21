@@ -5,10 +5,11 @@ from django.db import connection
 from pprint import pprint
 from django.db.models import OuterRef,Subquery
 def run():
+    pass
      
-    res=Restaurant.objects.filter(restaurant__in=['IT','GR'])
-    sales = Sale.objects.filter(restaurant__in=Subquery(res.values('pk')))
-    print(sales)    
+    # res=Restaurant.objects.filter(restaurant__in=['IT','GR'])
+    # sales = Sale.objects.filter(restaurant__in=Subquery(res.values('pk')))
+    # print(sales)    
     # staff, created = Staff.objects.get_or_create(name='John Wick')
     # res = Restaurant.objects.first()
     
