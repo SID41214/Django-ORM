@@ -91,10 +91,10 @@ a.publisher.name
 b=book.objects.prefetch_related('')
 
 
-a=book.objects.select_related('publisher').get(id=1)
-a.publisher.name
+# a=book.objects.select_related('publisher').get(id=1)
+# a.publisher.name
 
 
-book.objects.prefetch_related('book_set').get(id=1)
-b.book_set.all()
+# book.objects.prefetch_related('book_set').get(id=1)
+# b.book_set.all()
 
